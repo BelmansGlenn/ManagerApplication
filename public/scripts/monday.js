@@ -57,7 +57,9 @@ inputToDo.addEventListener('keypress', (e) => {
             let sortTask = document.getElementById("toDoInput")
             let sortable = Sortable.create(sortTask, {animation: 100, ghostClass: 'myghostclass', dragClass: 'sortable-drag',
           	onChange: function(evt) {
-            console.log(evt.newIndex) 
+            console.log(evt.newIndex)
+            let inputCol = "id"
+            updatePlace(inputCol) 
             }})
             // delete
             let deleteBtn = document.querySelectorAll(".redHover")
@@ -88,6 +90,8 @@ inputWorkout.addEventListener('keypress', (e) => {
             let sortable = Sortable.create(sortTask, {animation: 100, ghostClass: 'myghostclass', dragClass: 'sortable-drag',
           	onChange: function(evt) {
             console.log(evt.newIndex) 
+            let inputCol = "id"
+            updatePlace(inputCol)
             }})
             // delete
             let deleteBtn = document.querySelectorAll(".redHover")
@@ -116,7 +120,9 @@ inputMeal.addEventListener('keypress', (e) => {
             let sortTask = document.getElementById("mealInput")
             let sortable = Sortable.create(sortTask, {animation: 100, ghostClass: 'myghostclass', dragClass: 'sortable-drag',
           	onChange: function(evt) {
-            console.log(evt.newIndex) 
+            console.log(evt.newIndex)
+            let inputCol = "id"
+            updatePlace(inputCol) 
             }})
             // delete
             let deleteBtn = document.querySelectorAll(".redHover")
@@ -146,6 +152,8 @@ inputBuy.addEventListener('keypress', (e) => {
             let sortable = Sortable.create(sortTask, {animation: 100, ghostClass: 'myghostclass', dragClass: 'sortable-drag',
           	onChange: function(evt) {
             console.log(evt.newIndex) 
+            let inputCol = "id"
+            updatePlace(inputCol)
             }}) 
             // delete
             let deleteBtn = document.querySelectorAll(".redHover")
@@ -172,7 +180,8 @@ const displayTask = (data) => {
   	onChange: function(evt) {
     evt.newIndex;
       
-      updatePlace();
+    let inputCol = "monday_id"
+    updatePlace(inputCol)
       //updatePlace({table: "monday",id: evt.item.dataset.id, place:evt.newIndex, condition:"monday_id"});
     }})
     
@@ -188,7 +197,8 @@ const displayTask = (data) => {
     let sortable = Sortable.create(sortTask, {animation: 100, ghostClass: 'myghostclass', dragClass: 'sortable-drag',
   	onChange: function(evt) {
     console.log(evt.newIndex)
-    updatePlace();
+    let inputCol = "monday_id"
+    updatePlace(inputCol)
     }})
     }
   });
@@ -201,7 +211,8 @@ const displayTask = (data) => {
     let sortable = Sortable.create(sortTask, {animation: 100, ghostClass: 'myghostclass', dragClass: 'sortable-drag',
   	onChange: function(evt) {
     console.log(evt.newIndex)
-    updatePlace();
+    let inputCol = "monday_id"
+    updatePlace(inputCol)
     }})
     }
   });
@@ -214,7 +225,8 @@ const displayTask = (data) => {
     let sortable = Sortable.create(sortTask, {animation: 100, ghostClass: 'myghostclass', dragClass: 'sortable-drag',
   	onChange: function(evt) {
     console.log(evt.newIndex)
-    updatePlace();
+    let inputCol = "monday_id"
+    updatePlace(inputCol)
     }})
     }
   });
@@ -298,7 +310,7 @@ const deleteTheTask = (info) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({table: "monday",id: inputDisplay[i].dataset.id, place:i, condition:"monday_id"}),
+        body: JSON.stringify({table: "monday",id: inputDisplay[i].dataset.id, place:i, condition:infos}),
       })
       .then(response => response.json())
       .then(data => {
