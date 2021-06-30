@@ -116,9 +116,9 @@ const colorRatio = () => {
     console.log(checkRatio);
     checkRatio.forEach(e => {
         console.log(e.innerHTML);
-        if (e.innerHTML < "50") {
+        if (e.innerHTML < 50) {
             e.parentNode.classList.add("under50")
-        } else if (e.innerHTML < "70" && e.innerHTML > "50") {
+        } else if (e.innerHTML < 70 && e.innerHTML >= 50) {
             e.parentNode.classList.add("under70")
 
         } else {
