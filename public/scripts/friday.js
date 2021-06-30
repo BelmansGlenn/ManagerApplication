@@ -9,7 +9,38 @@ let w =0;
 let x =100;
 let y=200;
 let z=300;  
-
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+const date = new Date();
+const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+const actualDay = weekday[date.getDay()]
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+const newDay = () => {
+  if(23=== date.getHours() && 59 === date.getMinutes() && actualDay === "Friday"){
+    let allTasksDisplayed = document.querySelectorAll(".taskInput")
+    allTasksDisplayed.forEach(e => {
+      e.innerHTML = ""
+    });
+    resetTheDay(actualDay)
+  } 
+}
+setInterval(newDay, 20000);
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+const resetTheDay = () => {
+  fetch('api/resetTheDay', {
+    method: 'POST', 
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({day: actualDay}),
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Success:', data);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  })
+}
 // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 inputToDo.addEventListener('keypress', (e) => {
     if (e.key === 'Enter' && inputToDo.value == "") {
@@ -26,8 +57,6 @@ inputToDo.addEventListener('keypress', (e) => {
             let sortable = Sortable.create(sortTask, {animation: 100, ghostClass: 'myghostclass', dragClass: 'sortable-drag',
           	onChange: function(evt) {
             console.log(evt.newIndex) 
-            let idCondition = "id";
-            updatePlace(idCondition);
             }})
             // delete
             let deleteBtn = document.querySelectorAll(".redHover")
@@ -57,9 +86,7 @@ inputWorkout.addEventListener('keypress', (e) => {
             let sortTask = document.getElementById("workoutInput")
             let sortable = Sortable.create(sortTask, {animation: 100, ghostClass: 'myghostclass', dragClass: 'sortable-drag',
           	onChange: function(evt) {
-            console.log(evt.newIndex)
-            let idCondition = "id";
-            updatePlace(idCondition); 
+            console.log(evt.newIndex) 
             }})
             // delete
             let deleteBtn = document.querySelectorAll(".redHover")
@@ -88,9 +115,7 @@ inputMeal.addEventListener('keypress', (e) => {
             let sortTask = document.getElementById("mealInput")
             let sortable = Sortable.create(sortTask, {animation: 100, ghostClass: 'myghostclass', dragClass: 'sortable-drag',
           	onChange: function(evt) {
-            console.log(evt.newIndex)
-            let idCondition = "id";
-            updatePlace(idCondition); 
+            console.log(evt.newIndex) 
             }})
             // delete
             let deleteBtn = document.querySelectorAll(".redHover")
@@ -119,9 +144,7 @@ inputBuy.addEventListener('keypress', (e) => {
             let sortTask = document.getElementById("buyInput")
             let sortable = Sortable.create(sortTask, {animation: 100, ghostClass: 'myghostclass', dragClass: 'sortable-drag',
           	onChange: function(evt) {
-            console.log(evt.newIndex)
-            let idCondition = "id";
-            updatePlace(idCondition); 
+            console.log(evt.newIndex) 
             }}) 
             // delete
             let deleteBtn = document.querySelectorAll(".redHover")
@@ -146,8 +169,7 @@ const displayTask = (data) => {
     let sortable = Sortable.create(sortTask, {animation: 100, ghostClass: 'myghostclass', dragClass: 'sortable-drag',
     onChange: function(evt) {
     console.log(evt.newIndex)
-    let idCondition = "friday_id";
-    updatePlace(idCondition); 
+    updatePlace();  
     }})
     }
   });
@@ -160,8 +182,7 @@ const displayTask = (data) => {
     let sortable = Sortable.create(sortTask, {animation: 100, ghostClass: 'myghostclass', dragClass: 'sortable-drag',
     onChange: function(evt) {
     console.log(evt.newIndex)
-    let idCondition = "friday_id";
-    updatePlace(idCondition);   
+    updatePlace();  
     }})
     }
   });
@@ -174,8 +195,7 @@ const displayTask = (data) => {
     let sortable = Sortable.create(sortTask, {animation: 100, ghostClass: 'myghostclass', dragClass: 'sortable-drag',
     onChange: function(evt) {
     console.log(evt.newIndex) 
-    let idCondition = "friday_id";
-    updatePlace(idCondition);  
+    updatePlace(); 
     }})
     }
   });
@@ -188,8 +208,7 @@ const displayTask = (data) => {
     let sortable = Sortable.create(sortTask, {animation: 100, ghostClass: 'myghostclass', dragClass: 'sortable-drag',
     onChange: function(evt) {
     console.log(evt.newIndex)
-    let idCondition = "friday_id";
-    updatePlace(idCondition);  
+    updatePlace(); 
     }})
     }
   });
@@ -274,7 +293,7 @@ const updatePlace = (infos) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({table: "friday",id: inputDisplay[i].dataset.id, place:i, condition:infos}),
+      body: JSON.stringify({table: "friday",id: inputDisplay[i].dataset.id, place:i, condition:"friday_id"}),
     })
     .then(response => response.json())
     .then(data => {
