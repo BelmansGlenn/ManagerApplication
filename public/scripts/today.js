@@ -14,9 +14,6 @@ displayCurrentDay()
 console.log(actualDay);
 // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-    
-    
-
 
 // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 const displayAllDB = (data) => {
@@ -41,7 +38,11 @@ const displayAllDB = (data) => {
                     listId.lastChild.dataset.done = "0";
                 }
                 updateDone({table: "monday", condition: "monday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
-            })  
+            })
+            const newDay = () => {
+                addOverall(({table: "overall", task: el.todo, done:listId.lastChild.dataset.done}))   
+              }
+              setInterval(newDay, 86400000);  
             }
         });
         data.allTaskMonday.forEach(el => {
@@ -59,7 +60,11 @@ const displayAllDB = (data) => {
                         listId.lastChild.dataset.done = "0";
                     }
                     updateDone({table: "monday", condition: "monday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
-                })                
+                })
+                const newDay = () => {
+                    addOverall(({table: "overall", task: el.workout, done:listId.lastChild.dataset.done}))   
+                  }
+                  setInterval(newDay, 86400000);                
             }
         });
         data.allTaskMonday.forEach(el => {
@@ -77,7 +82,11 @@ const displayAllDB = (data) => {
                         listId.lastChild.dataset.done = "0";
                     }
                     updateDone({table: "monday", condition: "monday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
-                })                
+                })
+                const newDay = () => {
+                    addOverall(({table: "overall", task: el.meal, done:listId.lastChild.dataset.done}))   
+                  }
+                  setInterval(newDay, 86400000);                
             }
         });
         data.allTaskMonday.forEach(el => {
@@ -95,7 +104,11 @@ const displayAllDB = (data) => {
                         listId.lastChild.dataset.done = "0";
                     }
                     updateDone({table: "monday", condition: "monday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
-                })                
+                }) 
+                const newDay = () => {
+                    addOverall(({table: "overall", task: el.buy, done:listId.lastChild.dataset.done}))   
+                  }
+                  setInterval(newDay, 86400000);               
             }
         });
         
@@ -116,7 +129,11 @@ const displayAllDB = (data) => {
                     listId.lastChild.dataset.done = "0";
                 }
                 updateDone({table: "tuesday", condition: "tuesday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
-            })            
+            })
+            const newDay = () => {
+                addOverall(({table: "overall", task: el.todo, done:listId.lastChild.dataset.done}))   
+              }
+              setInterval(newDay, 86400000);            
             }
         });
         data.allTaskTuesday.forEach(el => {
@@ -134,7 +151,11 @@ const displayAllDB = (data) => {
                         listId.lastChild.dataset.done = "0";
                     }
                     updateDone({table: "tuesday", condition: "tuesday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
-                })                
+                })
+                const newDay = () => {
+                    addOverall(({table: "overall", task: el.workout, done:listId.lastChild.dataset.done}))   
+                  }
+                  setInterval(newDay, 86400000);                
             }
         });
         data.allTaskTuesday.forEach(el => {
@@ -152,7 +173,11 @@ const displayAllDB = (data) => {
                         listId.lastChild.dataset.done = "0";
                     }
                     updateDone({table: "tuesday", condition: "tuesday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
-                })                
+                })
+                const newDay = () => {
+                    addOverall(({table: "overall", task: el.meal, done:listId.lastChild.dataset.done}))   
+                  }
+                  setInterval(newDay, 86400000);                
             }
         });
         data.allTaskTuesday.forEach(el => {
@@ -170,7 +195,11 @@ const displayAllDB = (data) => {
                         listId.lastChild.dataset.done = "0";
                     }
                     updateDone({table: "tuesday", condition: "tuesday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
-                })                
+                })
+                const newDay = () => {
+                    addOverall(({table: "overall", task: el.buy, done:listId.lastChild.dataset.done}))   
+                  }
+                  setInterval(newDay, 86400000);                
             }
         });
     } else if (actualDay === "Wednesday") {
@@ -189,7 +218,11 @@ const displayAllDB = (data) => {
                     listId.lastChild.dataset.done = "0";
                 }
                 updateDone({table: "wednesday", condition: "wednesday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
-            })            
+            })
+            const newDay = () => {
+                addOverall(({table: "overall", task: el.todo, done:listId.lastChild.dataset.done}))   
+              }
+              setInterval(newDay, 86400000);            
             }
         });
         data.allTaskWednesday.forEach(el => {
@@ -207,7 +240,11 @@ const displayAllDB = (data) => {
                         listId.lastChild.dataset.done = "0";
                     }
                     updateDone({table: "wednesday", condition: "wednesday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
-                })                
+                })
+                const newDay = () => {
+                    addOverall(({table: "overall", task: el.workout, done:listId.lastChild.dataset.done}))   
+                  }
+                  setInterval(newDay, 86400000);                
             }
         });
         data.allTaskWednesday.forEach(el => {
@@ -225,7 +262,11 @@ const displayAllDB = (data) => {
                         listId.lastChild.dataset.done = "0";
                     }
                     updateDone({table: "wednesday", condition: "wednesday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
-                })                
+                })
+                const newDay = () => {
+                    addOverall(({table: "overall", task: el.meal, done:listId.lastChild.dataset.done}))   
+                  }
+                  setInterval(newDay, 86400000);                
             }
         });
         data.allTaskWednesday.forEach(el => {
@@ -243,7 +284,11 @@ const displayAllDB = (data) => {
                         listId.lastChild.dataset.done = "0";
                     }
                     updateDone({table: "wednesday", condition: "wednesday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
-                })                
+                })
+                const newDay = () => {
+                    addOverall(({table: "overall", task: el.buy, done:listId.lastChild.dataset.done}))   
+                  }
+                  setInterval(newDay, 86400000);                
             }
         });
     } else if (actualDay === "Thursday") {
@@ -252,7 +297,7 @@ const displayAllDB = (data) => {
             if(el.todo != null){
             let newTaskDB = `<section class="boxTasks" id="${i}"><p class="fontStyleTask">${el.todo}</p><button class="uptBtn done-${el.done}" data-done="${el.done}" data-id="${el.thursday_id}"></button></section>`
             activityName[0].insertAdjacentHTML("beforeend", newTaskDB)
-            const listId = document.getElementById(`${i}`)
+            const listId = document.getElementById(`${i}`)      
             listId.addEventListener('click', (el) =>{
                 listId.lastChild.classList.toggle('done-1');
                 console.log(listId.lastChild.dataset.done);
@@ -262,7 +307,12 @@ const displayAllDB = (data) => {
                     listId.lastChild.dataset.done = "0";
                 }
                 updateDone({table: "thursday", condition: "thursday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
-            })            
+            })
+            const newDay = () => {
+                addOverall(({table: "overall", task: el.todo, done:listId.lastChild.dataset.done}))   
+              }
+              setInterval(newDay, 86400000);
+                            
             }
         });
         data.allTaskThursday.forEach(el => {
@@ -280,7 +330,11 @@ const displayAllDB = (data) => {
                         listId.lastChild.dataset.done = "0";
                     }
                     updateDone({table: "thursday", condition: "thursday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
-                })                
+                })
+                const newDay = () => {
+                    addOverall(({table: "overall", task: el.workout, done:listId.lastChild.dataset.done}))   
+                  }
+                  setInterval(newDay, 86400000);                
             }
         });
         data.allTaskThursday.forEach(el => {
@@ -298,7 +352,11 @@ const displayAllDB = (data) => {
                         listId.lastChild.dataset.done = "0";
                     }
                     updateDone({table: "thursday", condition: "thursday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
-                })                
+                })
+                const newDay = () => {
+                    addOverall(({table: "overall", task: el.meal, done:listId.lastChild.dataset.done}))   
+                  }
+                  setInterval(newDay, 86400000);                
             }
         });
         data.allTaskThursday.forEach(el => {
@@ -316,7 +374,11 @@ const displayAllDB = (data) => {
                         listId.lastChild.dataset.done = "0";
                     }
                     updateDone({table: "thursday", condition: "thursday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
-                })                
+                })
+                const newDay = () => {
+                    addOverall(({table: "overall", task: el.todo, done:listId.lastChild.dataset.done}))   
+                  }
+                  setInterval(newDay, 86400000);                
             }
         });
     } else if (actualDay === "Friday") {
@@ -335,7 +397,11 @@ const displayAllDB = (data) => {
                     listId.lastChild.dataset.done = "0";
                 }
                 updateDone({table: "friday", condition: "friday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
-            })            
+            })  
+            const newDay = () => {
+                addOverall(({table: "overall", task: el.todo, done:listId.lastChild.dataset.done}))   
+              }
+              setInterval(newDay, 86400000);          
             }
         });
         data.allTaskFriday.forEach(el => {
@@ -353,7 +419,11 @@ const displayAllDB = (data) => {
                         listId.lastChild.dataset.done = "0";
                     }
                     updateDone({table: "friday", condition: "friday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
-                })                
+                }) 
+                const newDay = () => {
+                    addOverall(({table: "overall", task: el.workout, done:listId.lastChild.dataset.done}))   
+                  }
+                  setInterval(newDay, 86400000);               
             }
         });
         data.allTaskFriday.forEach(el => {
@@ -371,7 +441,11 @@ const displayAllDB = (data) => {
                         listId.lastChild.dataset.done = "0";
                     }
                     updateDone({table: "friday", condition: "friday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
-                })                
+                })      
+                const newDay = () => {
+                    addOverall(({table: "overall", task: el.meal, done:listId.lastChild.dataset.done}))   
+                  }
+                  setInterval(newDay, 86400000);          
             }
         });
         data.allTaskFriday.forEach(el => {
@@ -390,6 +464,10 @@ const displayAllDB = (data) => {
                     }
                     updateDone({table: "friday", condition: "friday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
                 })
+                const newDay = () => {
+                    addOverall(({table: "overall", task: el.buy, done:listId.lastChild.dataset.done}))   
+                  }
+                  setInterval(newDay, 86400000);
             }
         });
     } else if (actualDay === "Saturday") {
@@ -409,6 +487,11 @@ const displayAllDB = (data) => {
                 }
                 updateDone({table: "saturday", condition: "saturday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
             })
+            const newDay = () => {
+                addOverall(({table: "overall", task: el.todo, done:listId.lastChild.dataset.done}))   
+              }
+              setInterval(newDay, 86400000);
+                
             }
         });
         data.allTaskSaturday.forEach(el => {
@@ -427,6 +510,10 @@ const displayAllDB = (data) => {
                     }
                 updateDone({table: "saturday", condition: "saturday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
             })
+            const newDay = () => {
+                addOverall(({table: "overall", task: el.workout, done:listId.lastChild.dataset.done}))   
+              }
+              setInterval(newDay, 86400000);
             }
         });
         data.allTaskSaturday.forEach(el => {
@@ -445,6 +532,10 @@ const displayAllDB = (data) => {
                     }
                 updateDone({table: "saturday", condition: "saturday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
             })
+            const newDay = () => {
+                addOverall(({table: "overall", task: el.meal, done:listId.lastChild.dataset.done}))   
+              }
+              setInterval(newDay, 86400000);
             }
         });
         data.allTaskSaturday.forEach(el => {
@@ -463,6 +554,10 @@ const displayAllDB = (data) => {
                 }
                 updateDone({table: "saturday", condition: "saturday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
             })
+            const newDay = () => {
+                addOverall(({table: "overall", task: el.buy, done:listId.lastChild.dataset.done}))   
+              }
+              setInterval(newDay, 86400000);
             }
         });
     } else if (actualDay === "Sunday") {
@@ -483,6 +578,10 @@ const displayAllDB = (data) => {
                 }
                 updateDone({table: "sunday", condition: "sunday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
             })
+            const newDay = () => {
+                addOverall(({table: "overall", task: el.todo, done:listId.lastChild.dataset.done}))   
+              }
+              setInterval(newDay, 86400000);
             
             }
             
@@ -502,6 +601,10 @@ const displayAllDB = (data) => {
                     }
                     updateDone({table: "sunday", condition: "sunday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
                 })
+                const newDay = () => {
+                    addOverall(({table: "overall", task: el.workout, done:listId.lastChild.dataset.done}))   
+                  }
+                  setInterval(newDay, 86400000);
                 
             }
         });
@@ -520,6 +623,10 @@ const displayAllDB = (data) => {
                     }
                     updateDone({table: "sunday", condition: "sunday_id",id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
                 })
+                const newDay = () => {
+                    addOverall(({table: "overall", task: el.meal, done:listId.lastChild.dataset.done}))   
+                  }
+                  setInterval(newDay, 86400000);
                 
             }
            
@@ -540,6 +647,10 @@ const displayAllDB = (data) => {
                     }
                     updateDone({table: "sunday", condition: "sunday_id", id: listId.lastChild.dataset.id, done: listId.lastChild.dataset.done})
                 })
+                const newDay = () => {
+                    addOverall(({table: "overall", task: el.buy, done:listId.lastChild.dataset.done}))   
+                  }
+                  setInterval(newDay, 86400000);
                 
             }
            
@@ -549,6 +660,7 @@ const displayAllDB = (data) => {
             let allTasks = document.querySelectorAll(".boxTasks").length
             numTaskToday.insertAdjacentHTML('beforeend', allTasks)
             console.log(allTasks);
+    
 }
 
 const loadtask = () => {
@@ -577,6 +689,23 @@ const updateDone = (info) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(info),
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  }
+
+  const addOverall = (tasks) => {
+    fetch('api/addingoverall', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(tasks),
     })
     .then(response => response.json())
     .then(data => {

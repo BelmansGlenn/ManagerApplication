@@ -68,6 +68,9 @@ app.post('/api/tasks/update', (req, res) => {
 app.post('/api/updateplace', (req, res) => {
   manager.updatePlace(req.body)
 })
+app.post('/api/addingoverall', (req, res) => {
+  manager.addOverall(req.body)
+})
 
 
 

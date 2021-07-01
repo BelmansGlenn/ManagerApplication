@@ -16,11 +16,24 @@ const addingTask = (data) => {
     db.close();
   
   }
+  const addOverall = (data) => {
+    let db = new sqlite3.Database('db/db.lifeappdatabase');
+    
+    db.run(`INSERT INTO ${data.table} (tasks, done) VALUES (?, ?)`,[data.task, data.done], function(err) {
+        if (err) {
+          return console.log(err);
+        }
+        console.log(`A row has been inserted with rowid ${this.lastID}`);
+    });
+    
+    db.close();
+  
+  }
 
 
   const displayingTask = (req, res) => {
 
-    let sendData = {allTaskMonday:[],allTaskTuesday:[],allTaskWednesday:[],allTaskThursday:[],allTaskFriday:[],allTaskSaturday:[],allTaskSunday:[]};
+    let sendData = {allTaskMonday:[],allTaskTuesday:[],allTaskWednesday:[],allTaskThursday:[],allTaskFriday:[],allTaskSaturday:[],allTaskSunday:[], overall:[]};
     
   
     let db = new sqlite3.Database('db/db.lifeappdatabase', (err) => {
@@ -78,6 +91,12 @@ const addingTask = (data) => {
         }
           sendData.allTaskSunday.push(row);
       });
+    });
+    db.each(`SELECT * FROM overall`, (err, row) => {
+      if (err) {
+        console.error(err.message);
+      }
+        sendData.overall.push(row);
     });
   
     db.close((err) => {
@@ -165,3 +184,4 @@ exports.deletingTask = deletingTask;
 exports.update = update;
 exports.updatePlace = updatePlace;
 exports.resetTheDay = resetTheDay;
+exports.addOverall = addOverall;
