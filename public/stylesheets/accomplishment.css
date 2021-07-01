@@ -51,4 +51,30 @@
     color: rgb(43 188 57 / 42%);
     text-shadow: 0px 0px 2px #DDFFDC;
 }
+.hideFromM {
+    display: none;
+}
 /* JS CALL FOR COLORS END  */
+@media only screen and (min-width: 1024px) {
+    .hideRespoM {
+        display: none;
+    }
+    .hideFromM {
+        display: inherit;
+        font-size: 80px;
+    }
+    .headerAccom {
+        align-items: center;
+        margin: 50px 0;
+    }
+
+    .aline {
+        width: 300px;
+    }
+    .line {
+        padding: 65px 0px
+    }
+    .descriAccom {
+        font-size: 18px
+    }
+}

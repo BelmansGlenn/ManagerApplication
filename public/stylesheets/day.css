@@ -89,3 +89,23 @@ body{
   .marginGoBack{
       margin-bottom: 20px;
   }
+  .fixWedTypo {
+    font-size: 34px;
+  }  
+  .fixThursTypo {
+    font-size: 42px;
+  }  
+  .fixSatTypo {
+    font-size: 46px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .line{
+      padding: 30px 0 20px 0;  
+      display: flex;
+      justify-content: center;
+    }
+    .aline{
+      width: 200px;
+    }
+}

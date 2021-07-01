@@ -26,6 +26,16 @@ const fetchLifeAppDB = () => {
 fetchLifeAppDB();
 
 // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// mobile hour 
+// let dayOfToday = document.querySelector(".dayOfToday")
+// let hourTime = document.querySelector(".hourTime")
+// let hours = date.getHours
+// const desktopTime = () => {
+//     dayOfToday.insertAdjacentHTML('beforeend', actualDay)
+//     hourTime.insertAdjacentHTML('beforeend', hours)
+// }
+// setInterval(desktopTime, 1000);
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 const displayStats = (data) => {
     let downCounter = 0
