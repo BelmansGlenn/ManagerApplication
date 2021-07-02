@@ -42,7 +42,7 @@ const displayAllDB = (data) => {
             const newDay = () => {
                 addOverall(({table: "overall", task: el.todo, done:listId.lastChild.dataset.done}))   
               }
-              setInterval(newDay, 86400000);  
+              setInterval(newDay, 860000);  
             }
         });
         data.allTaskMonday.forEach(el => {
@@ -385,7 +385,7 @@ const displayAllDB = (data) => {
         data.allTaskFriday.forEach(el => {
             i++;
             if(el.todo != null){
-            let newTaskDB = `<section class="boxTasks" id="${i}"><p class="fontStyleTask">${el.todo}</p><button class="uptBtn done-${el.done}" data-done="${el.done}" data-id="${el.thursday_id}"></button></section>`
+            let newTaskDB = `<section class="boxTasks" id="${i}"><p class="fontStyleTask">${el.todo}</p><button class="uptBtn done-${el.done}" data-done="${el.done}" data-id="${el.friday_id}"></button></section>`
             activityName[0].insertAdjacentHTML("beforeend", newTaskDB)
             const listId = document.getElementById(`${i}`)
             listId.addEventListener('click', (el) =>{
